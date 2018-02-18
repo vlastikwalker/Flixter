@@ -21,7 +21,12 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # bootsrap gem
-gem 'bootstrap', '~> 4.0.0'
+gem 'popper_js', '~> 1.11.1'
+gem 'bootstrap', '4.0.0.alpha6'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 # javascript depends on this
 gem 'jquery-rails'
 
