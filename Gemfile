@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.5'
 # postgresql gem
 gem 'pg'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -48,8 +48,11 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcry
 gem 'sorcery'
 
 gem 'carrierwave', '~> 1.0' #simple way to upload files
-gem "mini_magick"#resize resolutions
 
+gem 'mini_magick' #resize resolutions
+
+gem 'figaro' #used to store config
+gem 'carrierwave-aws'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
