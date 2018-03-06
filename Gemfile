@@ -48,6 +48,7 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcry
 gem 'sorcery'
 
 gem 'carrierwave', '~> 1.0' #simple way to upload files
+gem "mini_magick"#resize resolutions
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
