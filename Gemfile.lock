@@ -107,6 +107,8 @@ GEM
     ffi (1.9.21-x64-mingw32)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -259,6 +261,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   figaro
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
