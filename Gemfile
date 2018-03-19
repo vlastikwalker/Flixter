@@ -33,6 +33,7 @@ source 'https://rails-assets.org' do
 end
 # javascript depends on this
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
