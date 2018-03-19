@@ -9,9 +9,13 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # postgresql gem
-gem 'pg'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :production, :staging do
+  gem "pg"
+end
+
+group :development, :test do
+  gem "sqlite3"
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -43,7 +47,18 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#  windows 10 devise fix
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
+gem 'sorcery'
 
+gem 'carrierwave', '~> 1.0' #simple way to upload files
+
+gem 'mini_magick' #resize resolutions
+
+gem 'figaro' #used to store config
+gem 'carrierwave-aws'
+gem 'stripe'
+gem 'ranked-model'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -58,6 +73,7 @@ group :development do
 end
 #Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
