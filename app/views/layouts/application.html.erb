@@ -25,12 +25,16 @@
         </ul>
         <ul class="navbar-nav ">
           <% if user_signed_in? %>
+<<<<<<< HEAD
             <li class="nav-item">
               <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </li>
+=======
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+>>>>>>> master
           <% else %>
             <li class="nav-item ">
               <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
@@ -56,6 +60,7 @@
   </div>
   <div id="footer">
     <div class="container">
+<<<<<<< HEAD
       <div class="row">
         <div class="col-12 col-sm-3">
           <b>Teachers</b>
@@ -93,6 +98,11 @@
           <span class="fa fa-twitter-square fa-2x social-button"></span>
         </div>
       </div>
+=======
+      <b>Teachers</b>
+      <br />
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
+>>>>>>> master
     </div>
   </div>
 

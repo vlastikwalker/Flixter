@@ -2,6 +2,7 @@
 
 <div class="booyah-box col-10 offset-1">
   <h1><%= current_lesson.title %></h1>
+<<<<<<< HEAD
   <p class="float-left">
     <%= current_lesson.subtitle %>
   </p>
@@ -13,6 +14,12 @@
   <br class = "clr" />
   <br />
 
+=======
+  <p>
+    <%= current_lesson.subtitle %>
+  </p>
+
+>>>>>>> master
   <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto"
          poster="<%= image_path('black.jpg') %>" data-setup="{}">
     <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>

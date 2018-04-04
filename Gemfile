@@ -55,13 +55,19 @@ gem 'sorcery'
 gem 'carrierwave', '~> 1.0' #simple way to upload files
 
 gem 'mini_magick' #resize resolutions
+<<<<<<< HEAD
 
 gem 'figaro' #used to store config
 gem 'carrierwave-aws'
 gem 'stripe'
 gem 'ranked-model'
 gem "font-awesome-rails"
+=======
+>>>>>>> master
 
+gem 'figaro' #used to store config
+gem 'carrierwave-aws'
+gem 'stripe'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
