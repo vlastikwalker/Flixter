@@ -16,8 +16,7 @@ end
 group :development, :test do
   gem "sqlite3"
 end
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,15 +54,12 @@ gem 'sorcery'
 gem 'carrierwave', '~> 1.0' #simple way to upload files
 
 gem 'mini_magick' #resize resolutions
-<<<<<<< HEAD
 
 gem 'figaro' #used to store config
 gem 'carrierwave-aws'
 gem 'stripe'
 gem 'ranked-model'
 gem "font-awesome-rails"
-=======
->>>>>>> master
 
 gem 'figaro' #used to store config
 gem 'carrierwave-aws'
