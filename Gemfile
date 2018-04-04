@@ -16,8 +16,7 @@ end
 group :development, :test do
   gem "sqlite3"
 end
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,6 +32,7 @@ source 'https://rails-assets.org' do
 end
 # javascript depends on this
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -58,6 +58,12 @@ gem 'mini_magick' #resize resolutions
 gem 'figaro' #used to store config
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'ranked-model'
+gem "font-awesome-rails"
+
+gem 'figaro' #used to store config
+gem 'carrierwave-aws'
+gem 'stripe'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -72,6 +78,7 @@ group :development do
 end
 #Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

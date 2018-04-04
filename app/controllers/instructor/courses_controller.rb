@@ -7,6 +7,11 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
+    @section = Section.new
+    @lesson = Lesson.new
+=======
+>>>>>>> master
   end
 
   def create
