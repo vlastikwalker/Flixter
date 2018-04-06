@@ -1,112 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flixter</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Flixter</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
-  </head>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
+</head>
 
-  <body>
-  <div id="flex-content-container">
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
+<body>
+<div id="flex-content-container">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav  mr-auto mt-2 mt-md-0 ">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav  mr-auto mt-2 mt-md-0 ">
+        <li class="nav-item">
+          <%= link_to 'See All Courses', courses_path, class: 'nav-link' %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ">
+        <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'See All Courses', courses_path, class: 'nav-link' %>
+            <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
           </li>
-        </ul>
-        <ul class="navbar-nav ">
-          <% if user_signed_in? %>
-<<<<<<< HEAD
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-=======
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
->>>>>>> master
-          <% else %>
-            <li class="nav-item ">
-              <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item ">
-              <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-            </li>
-          <%end%>
-        </ul>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item ">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item ">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  </nav>
+
+  <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+
+  <%= yield %>
+
+</div>
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-3">
+        <b>Teachers</b>
+        <br />
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <br />
+        <%= link_to 'My Dashboard', dashboard_path %>
       </div>
-    </nav>
-
-      <% if notice.present? %>
-        <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-
-
-    <%= yield %>
-
-  </div>
-  <div id="footer">
-    <div class="container">
-<<<<<<< HEAD
-      <div class="row">
-        <div class="col-12 col-sm-3">
-          <b>Teachers</b>
-          <br />
-          <%= link_to 'Teach a Course', new_instructor_course_path %>
-          <br />
-          <%= link_to 'My Dashboard', dashboard_path %>
-        </div>
-        <div class="col-12 col-sm-3">
-          <b>About</b>
-          <br />
-          <%= link_to 'Team', '#' %>
-          <br />
-          <%= link_to 'Careers', '#' %>
-          <br />
-          <%= link_to 'Privacy Policy', privacy_path %>
-        </div>
-        <div class="col-12 col-sm-3">
-          <b>Contact</b>
-          <br />
-          <br />
-          One Kendall Square
-          <br />
-          Arizona
-        </div>
-        <div class="col-12 col-sm-3 social">
-          <b>Social</b>
-          <br/>
-          <br/>
-          <%= link_to 'https://github.com/vlastikczech' do %>
-            <span class="fa fa-github-square fa-2x social-button"></span>
-          <% end %>
-
-          <span class="fa fa-facebook-square fa-2x social-button"></span>
-          <span class="fa fa-twitter-square fa-2x social-button"></span>
-        </div>
+      <div class="col-12 col-sm-3">
+        <b>About</b>
+        <br />
+        <%= link_to 'Team', '#' %>
+        <br />
+        <%= link_to 'Careers', '#' %>
+        <br />
+        <%= link_to 'Privacy Policy', privacy_path %>
       </div>
-=======
-      <b>Teachers</b>
-      <br />
-      <%= link_to 'Teach a Course', new_instructor_course_path %>
->>>>>>> master
+      <div class="col-12 col-sm-3">
+        <b>Contact</b>
+        <br />
+        <br />
+        One Kendall Square
+        <br />
+        Arizona
+      </div>
+      <div class="col-12 col-sm-3 social">
+        <b>Social</b>
+        <br/>
+        <br/>
+        <%= link_to 'https://github.com/vlastikczech' do %>
+          <span class="fa fa-github-square fa-2x social-button"></span>
+        <% end %>
+
+        <span class="fa fa-facebook-square fa-2x social-button"></span>
+        <span class="fa fa-twitter-square fa-2x social-button"></span>
+      </div>
     </div>
   </div>
+</div>
 
-  <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
-  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-  </body>
+<script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</body>
 </html>
