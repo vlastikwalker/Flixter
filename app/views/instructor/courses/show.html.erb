@@ -103,13 +103,12 @@
         <div class="modal-body">
           <%= f.input :title %>
           <br />
-          <%= f.submit "Create", class: 'btn btn-info btn-sm' %>
           <br />
           <br />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <%= f.submit "Create", class: 'btn btn-info btn-sm' %>
         </div>
       <% end %>
     </div>
