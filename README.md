@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+two sided video streaming marketplace platform, featuring credit card payment capabilities(stripe), user role management, complex user interfaces and advanced database relationships.
 
-Things you may want to cover:
+#heroku:https://flixter-vlastik-walker.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
