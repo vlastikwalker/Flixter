@@ -1,7 +1,7 @@
 class Instructor::LessonsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_authorized_for_current_section, only: [:create]
-  before_action :require_authorized_for_current_lesson, only: [:update]
+#  before_action :require_authorized_for_current_section, only: [:create]
+#  before_action :require_authorized_for_current_lesson, only: [:update]
 
 
   def create
@@ -38,6 +38,6 @@ class Instructor::LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:title, :subtitle, :video, :row_order_position)
+    params.require(:lesson).permit(:title, :subtitle, :videos, :row_order_position)
   end
 end

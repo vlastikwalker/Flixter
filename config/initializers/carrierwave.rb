@@ -10,6 +10,8 @@ CarrierWave.configure do |config|
       secret_access_key: ENV["AWS_SECRET_KEY"],
       region:            ENV["AWS_REGION"]
   }
-
- # config.cache_dir = "#{Rails.root}/tmp/uploads"
+  # config.permissions = 0666
+  # config.directory_permissions = 0777
+  #
+  # config.cache_dir = "#{Rails.root}/tmp/uploads"
 end

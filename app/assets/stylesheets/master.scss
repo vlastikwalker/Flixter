@@ -1,16 +1,31 @@
 @import "bootstrap";
 @import "font-awesome";
 
-body {
-  background: image_url('dark_wall.png');
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
+
+body {
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  box-sizing: inherit;
+}
+
 
 .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
-  box-shadow: 0px 1px 3px #2a2a2a;
-  background: image_url('dark_wood.png');
+  background: transparent;
+  z-index: 2;
+}
+nav.navbar.navbar-toggleable-md.navbar-inverse {
+  font-size: 28px;
+  margin-top: 16px;
+  margin-right: 95px;
+  margin-left: 90px;
 }
 
 .navbar-inverse a.navbar-brand {
@@ -18,9 +33,77 @@ body {
   font-weight: 100;
   color: white;
 }
+.navbar-inverse .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-logo {
+  display: inline-block;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  margin: 40px;
+  color: #eee;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -ms-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+
+  &:hover {
+    color: #eee;
+    text-decoration: none;
+    transform: translateY(-3px);
+  }
+}
+
+
+.navbar-nav-home {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 57px;
+}
+
+.navbar-nav-home .nav-link {
+  color: #eee;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+// section info
+
+.feature-box {
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.feature-box__icon {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #94a0a4, #748083, #556163, #384345, #1d2829);
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 
 .hero {
-  background: image_url('hero.jpg') no-repeat center center fixed;
+  background: image_url('home.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,6 +111,44 @@ body {
   height: 400px;
   box-shadow: 0px 3px 8px #2a2a2a;
 }
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 710px;
+  overflow: hidden;
+}
+.home-video {
+  position: absolute;
+  width: auto;
+  height: 200vh;
+  min-width: 100%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.section-1{
+  height: 63vh;
+}
+.section-info {
+  margin-top: 121px;
+}
+.section-info h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.section-info p{
+  font-size: 21px;
+  margin-top: 5px;
+}
+
+.section-info .fa {
+  font-size: 115px;
+  margin-bottom: 82px;
+}
+
 
 h1, h2, h3, h4, h5, h6, .navbar {
   margin: 0;
@@ -36,6 +157,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .frosty{
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  margin-top: 175px;
 }
 
 .frosty h1 {
@@ -57,7 +179,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  color: white;
+  color: black;
 }
 
 .booyah-box {
@@ -146,4 +268,46 @@ ul .header .fa {
 
 .section h3 {
   color: white;
+}
+/* Social buttons*/
+.social-button {
+  transition: all .2s ease-in-out;
+}
+.social-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(35, 173, 255, 1);
+}
+
+// courses
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 25rem;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.card-side {
+  height: 25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15)
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%,-50%);
+  color: black;
+  font-weight: 700;
+}
+.img-fluid {
+  width: 100%;
+  position: relative;
+  opacity: .3;
 }

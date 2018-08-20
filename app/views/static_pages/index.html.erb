@@ -1,32 +1,89 @@
-<div class="hero">
-  <br />
-  <div class="frosty col-10 offset-1 text-center">
-    <br />
-    <h1>True knowledge exists in knowing that you know nothing</h1>
-    <br />
-    <h2>Developed by, Vlastik</h2>
-    <br />
-    <%= link_to 'Learn More', courses_path , class: 'btn btn-success' %>
-    <br /><br />
+
+ <header class="header">
+  <div class="header__image"></div>
+   <%= link_to 'Flixter', root_path, class: 'navbar-logo' %>
+
+   <ul class="navbar-nav-home ">
+     <% if user_signed_in? %>
+       <li class="nav-item">
+         <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+       </li>
+       <li class="nav-item">
+         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+       </li>
+     <% else %>
+       <li class="nav-item ">
+         <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+       </li>
+       <li class="nav-item ">
+         <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+       </li>
+     <%end%>
+   </ul>
+  <div class="header__text-box">
+    <div class="heading-primary">
+      <span class="heading-primary--main">
+        You can learn anything
+      </span>
+      <span class="heading-primary--sub">
+        If you put your mind into it
+      </span>
+    </div>
+    <%= link_to 'Discover our courses', courses_path, class: 'btn-home' %>
+    <%= link_to 'Teach a course',  new_instructor_course_path, class: 'btn-green' %>
+    <div class="scroll-anchor">
+      <a href="#about"><span></span></a>
+    </div>
   </div>
-</div>
+ </header>
 
 <br/>
-<div class="row feature text-center">
-  <div class="col-12 col-sm">
-    <h3>Amazing Courses</h3>
-    <br />
-    <p>Choose from any number of courses to study with amazing teachers.</p>
-  </div>
-  <div class="col-12 col-sm">
-    <h3>Learn At Your Own Pace</h3>
-    <br />
-    <p>Enroll and access a courses archive of lessons.</p>
-  </div>
-  <div class="col-12 col-sm">
-    <h3>Join our Community</h3>
-    <br />
-    <p>Learn with a community of like-minded individuals.</p>
-  </div>
-</div>
+ <section class="section-about" id="about">
+   <h2 class="heading-secondary">About us </h2>
+   <hr class="border-line">
 
+   <div class="row">
+     <div class="col-12 col-sm">
+       <div class="feature-box">
+         <i class="feature-box__icon fa fa-users"></i>
+         <div class="feature-box__circle"></div>
+         <h3 class="feature-box--heading">Teach a course</h3>
+         <div class="feature-box__text">
+           <p>
+             lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam, ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem. lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam,
+             ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem
+           </p>
+         </div>
+
+       </div>
+     </div>
+     <div class="col-12 col-sm">
+       <div class="feature-box">
+         <i class="feature-box__icon fa fa-camera-retro"></i>
+         <div class="feature-box__circle"></div>
+         <h3 class="feature-box--heading">Learn At Your Own Pace</h3>
+         <div class="feature-box__text">
+           <p>
+             lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam, ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem. lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam,
+             ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem
+           </p>
+         </div>
+
+       </div>
+     </div>
+     <div class="col-12 col-sm">
+       <div class="feature-box">
+         <i class="feature-box__icon fa fa-users"></i>
+         <div class="feature-box__circle"></div>
+         <h3 class="feature-box--heading">Join our Community</h3>
+         <div class="feature-box__text">
+           <p>
+             lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam, ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem. lorem ipsum dolor sit amet consecteture adipisicicing elit. Aperiam,
+             ipsum sapients asperem ipsum sapients asperem ipsum sapients asperem
+           </p>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </section>
