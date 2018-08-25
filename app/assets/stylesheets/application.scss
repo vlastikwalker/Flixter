@@ -103,6 +103,26 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .btn-green {
+    width: 40%;
+  }
+  .btn-home {
+    width: 40%;
+  }
+
+  .feature-box__circle {
+    display: none;
+  }
+  .scroll-anchor a  {
+    bottom: -101px !important;
+  }
+}
+@media (max-width: 1024px) {
+  .scroll-anchor {
+    display: none;
+  }
+}
 
 .scroll-anchor a {
   position: absolute;
