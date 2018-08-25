@@ -1,43 +1,66 @@
-<br />
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
 
-<div class="booyah-box col-10 offset-1">
-  <h1>What I'm Learning</h1>
-  <% current_user.enrolled_courses.each do |course| %>
-    <h3 class="text-center">
-      <%= link_to course.title, course_path(course) %>
-    </h3>
-    <br />
-    <%= image_tag course.image, class: 'img-fluid' %>
-    <br />
-    <div class="row">
-      <div class="col-12 col-sm-8">
-        <%= course.description %>
-      </div>
-      <div class="col-12 col-sm-4 text-center">
-        <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav  mr-auto mt-2 mt-md-0 ">
+    </ul>
+    <ul class="navbar-nav ">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item ">
+          <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item ">
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+</nav>
+
+<div class="dashboard-wrapper">
+  <div class="dashboard-content">
+    <h1>My Dashboard</h1>
+
+    <div class="dashboard-course-wrapper">
+      <div class="dashboard-course-content">
+          <h2>What I'm Learning</h2>
+          <ul class="dashboard-course--list">
+            <% current_user.courses.each do |course| %>
+              <li class="dashboard-course--item">
+                <h3><%= link_to course.title, course_path(course) %></h3>
+                <div class="dashboard-course--image">
+                  <%= image_tag course.image %>
+                </div>
+                <p class="dashboard-course--description"><%= truncate(course.description, length: 150) %></p>
+                <%= link_to 'View Course', course_path(course), class: 'button' %>
+              </li>
+            <% end %>
+          </ul>
+          <h2>What I'm Teaching</h2>
+          <ul class="dashboard-course--list">
+            <% current_user.courses.each do |course| %>
+              <li class="dashboard-course--item">
+                <h3><%= link_to course.title, course_path(course) %></h3>
+                <div class="dashboard-course--image">
+                  <%= image_tag course.image %>
+                </div>
+                <p class="dashboard-course--description"><%= truncate(course.description, length: 150) %></p>
+                <%= link_to 'View Course', course_path(course), class: 'button' %>
+              </li>
+            <% end %>
+          </ul>
       </div>
     </div>
-    <hr class="col-8 offset-2">
-    <br class="clr" />
-  <% end %>
-
-  <h1>What I'm Teaching</h1>
-  <% current_user.courses.each do |course| %>
-    <h3 class="text-center">
-      <%= link_to course.title, course_path(course) %>
-    </h3>
-    <br />
-    <%= image_tag course.image, class: 'img-fluid' %>
-    <br />
-    <div class="row">
-      <div class="col-12 col-sm-8">
-        <%= course.description %>
-      </div>
-      <div class="col-12 col-sm-4 text-center">
-        <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
-      </div>
-    </div>
-    <hr class="col-8 offset-2">
-    <br class="clr" />
-  <% end %>
+  </div>
 </div>
+

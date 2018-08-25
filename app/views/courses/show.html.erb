@@ -1,75 +1,122 @@
-<br />
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
 
-<div class="booyah-box col-10 offset-1">
-  <h1><%= @course.title %></h1>
-  <% if @course.image.present? %>
-    <%= image_tag @course.image, class: 'img-fluid' %>
-  <% end %>
-  <br/>
-  <div class="row">
-    <div class="col-sm-4 col-12 text-center">
-      <span class="badge badge-default">
-        <%= number_to_currency @course.cost %>
-      </span>
-
-      <% if current_user && current_user == @course.user %>
-        <br />
-        <br />
-        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
-      <% end %>
-    </div>
-
-    <br/>
-    <br/>
-    <% if current_user %>
-      <% if current_user && current_user.enrolled_in?(@course) %>
-        <h3 class="badge badge-info">You Are Enrolled!</h3>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav  mr-auto mt-2 mt-md-0 ">
+    </ul>
+    <ul class="navbar-nav ">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
       <% else %>
-        <% if @course.free? %>
-         <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
-         <% else %>
-          <%= form_tag course_enrollments_path(@course) do %>
-
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-email="<%= current_user.email %>"
-                      data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
-                      data-amount="<%= (@course.cost * 100).to_i %>"
-                      data-locale="auto"></script>
-            <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+        <li class="nav-item ">
+          <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item ">
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <%end%>
+    </ul>
   </div>
+</nav>
 
-    <div class="col-sm-8 col-12">
-      <%= @course.description %>
-    </div>
-  </div>
 
-  <div class="col-12">
-    <% @course.sections.rank(:row_order).each do |section| %>
-      <br/>
-      <div class="section">
-        <h3>
-          <%= section.title %>
-        </h3>
-        <div class="row">
-          <% section.lessons.rank(:row_order).each do |lesson| %>
-            <div class="col-12 col-sm-6">
-              <div class="lesson text-center">
-                <br/>
-                <%= link_to lesson_path(lesson) do %>
-                  <b><%= lesson.title %></b>
-                  <br />
-                  <%= lesson.subtitle %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <br class="clr" />
+<div class="show-course-wrapper">
+  <div class="show-course-content">
+    <!-- Course Info -->
+    <h1 class="course-title"><%= @course.title %></h1>
+    <%= image_tag @course.image %>
+    <p class="course-description"><%= @course.description %></p>
+    <!-- Check if user is logged in and created the course (IE: is the teacher) -->
+    <% if current_user && current_user == @course.user %>
+      <div class="teacher-panel-wrapper">
+        <%= link_to 'Access Teacher Panel', instructor_course_path(@course), class: 'button'%>
       </div>
     <% end %>
+      <!-- If not teacher, check if the user is enrolled -->
+    <% if current_user %>
+      <% if current_user && current_user.enrolled_in?(@course) %>
+        <div class="student-panel-wrapper">
+          <p class="enrolled-msg">You are enrolled in this course</p>
+        </div>
+        <!-- if not enrolled, show enroll button -->
+      <% else %>
+        <div class="student-panel-wrapper">
+          <% if @course.free? %>
+            <%= link_to 'Enroll in Free Course', course_enrollments_path(@course), class: 'button', method: :post %>
+          <% else %>
+            <%= form_tag course_enrollments_path(@course) do %>
+              <article>
+                <label class="course-cost">
+                  <span>Amount: <%= number_to_currency @course.cost %></span>
+                </label>
+              </article>
+              <a href="#" id="stripeButton" class="button">Enroll in Premium Course</a>
+            <% end %>
+          <% end %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <hr>
+
+    <!-- List Course Sections -->
+
+    <ul class="course-sections-list">
+      <% @course.sections.rank(:row_order).each do |section| %>
+        <li class="course-section-list--item" >
+          <h4 class="course-section--title">
+            <%= section.title %>
+          </h4>
+          <!-- List Section Lessons -->
+          <ul class="section-lessons-list">
+            <% section.lessons.rank(:row_order).each do |lesson| %>
+              <li class="section-lesson-list--item" >
+                <%= link_to lesson_path(lesson) do %>
+                  <h5 class="section-lesson--title">
+                    <%= lesson.title %>
+                  </h5>
+                  <p class="section-lesson--subtitle">
+                    <%= lesson.subtitle %>
+                  </p>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+          <% end %>
+        </ul>
+
+
   </div>
 </div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+    var handler = StripeCheckout.configure({
+        key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+        token: function(token) {
+            // Use the token to create the charge with a server-side script.
+            // You can access the token ID with `token.id`
+        }
+    });
+    $('#stripeButton').on('click', function(e) {
+        // Open Checkout with further options
+        handler.open({
+            name: 'Flixter',
+            description: '<%= @course.title %>',
+            amount: <%= (@course.cost * 100).to_i %>
+        });
+        e.preventDefault();
+    });
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+        handler.close();
+    });
+</script>

@@ -1,28 +1,47 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
+
+<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+<ul class="navbar-nav  mr-auto mt-2 mt-md-0 ">
+</ul>
+<ul class="navbar-nav ">
+<% if user_signed_in? %>
+  <li class="nav-item">
+  <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+  </li>
+  <% else %>
+  <li class="nav-item ">
+  <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item ">
+  <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+  </li>
+  <%end%>
+</ul>
+</div>
+</nav>
+
 <br/>
 
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center">Learn something today</h1>
-  <hr/>
-  <div class="row">
-  <% @courses.each do |course| %>
-    <div class="col-xs-4 col-xs-offset-0 col-lg-4 col-lg-offset-0">
-      <div class="card">
-        <div class="card-side">
-          <h2 class="text-center">
-            <%= image_tag course.image, class: 'img-fluid' %>
-            <%= link_to course.title, course_path(course), class: 'card-title' %>
-          </h2>
-          <br/>
-          <div class="row">
-            <div class="col-12 text-center">
-              <p><%= course.description %></p>
-              <%= link_to 'More Details...', course_path(course), class: 'btn btn-primary btn-large' %>
-            </div>
-          </div>
-        </div>
-        <br class="clr" />
-      </div>
-    </div>
-    <% end %>
+<div class="courses-index-wrapper">
+  <div class="courses-index-content">
+    <h1>Launch Your Freelance Freedom</h1>
+    <ul class="course-list">
+      <% @courses.each do |course| %>
+        <li class="course-card">
+          <h2 class="course-card--title"><%= link_to course.title, course_path(course) %></h2>
+          <%= image_tag course.image %>
+          <p class="course-card--description"><%= truncate(course.description, length: 150) %></p>
+          <%= link_to 'View Course', course_path(course), class: 'button' %>
+        </li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
