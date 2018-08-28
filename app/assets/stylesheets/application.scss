@@ -45,7 +45,8 @@
   font-size: 60px;
   font-weight: 400;
   display: block;
-  letter-spacing: 12px;
+  letter-spacing: 1px;
+  line-height: 56px;
 }
 
 .heading-primary--sub {
@@ -63,7 +64,7 @@
   padding: 15px 40px;
   text-transform: uppercase;
   display: inline-block;
-  width: 35%;
+  width: 300px;
   margin-right: 48px;
   -webkit-transition: all .3s;
   -moz-transition: all 3s;
@@ -88,7 +89,7 @@
   padding: 15px 40px;
   text-transform: uppercase;
   display: inline-block;
-  width: 35%;
+  width: 300px;
   -webkit-transition: all .3s;
   -moz-transition: all 3s;
   -ms-transition: all .3s;
@@ -103,12 +104,12 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (max-width: 1440px) {
   .btn-green {
-    width: 40%;
+    width: 300px;
   }
   .btn-home {
-    width: 40%;
+    width: 300px;
   }
 
   .feature-box__circle {
@@ -225,19 +226,11 @@
 
 .feature-box{
 
-  &__circle {
-    position: absolute;
-    top: 10px;
-    left: 176px;
-    bottom: 316px;
-    right: 177px;
-    border: 3px #888 solid;
-    border-radius: 50%;
-  }
 
   &--heading {
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
   }
   &__text {
       font-size: 1.2rem;
