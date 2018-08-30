@@ -10,15 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require jquery-ui
 //= require rails-ujs
 //= require turbolinks
 //= require popper
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require_tree .
-
 
 $(document).ready(function(){
     // Add smooth scrolling to all links
