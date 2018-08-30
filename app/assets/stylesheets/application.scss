@@ -45,15 +45,14 @@
   font-size: 60px;
   font-weight: 400;
   display: block;
-  letter-spacing: 1px;
   line-height: 56px;
+  margin-bottom: 20px;
   font-family: 'PT Serif', serif;
 }
 
 .heading-primary--sub {
   display: block;
   font-size: 30px;
-  letter-spacing: 4px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -62,11 +61,12 @@
   color: #eee;
   border: 2px solid;
   border-radius: 100px;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 1px;
   padding: 15px 40px;
   text-transform: uppercase;
   display: inline-block;
-  width: 300px;
+  width: 280px;
   margin-right: 48px;
   -webkit-transition: all .3s;
   -moz-transition: all 3s;
@@ -87,11 +87,12 @@
   color: #eee;
   border: 2px solid;
   border-radius: 100px;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 1px;
   padding: 15px 40px;
   text-transform: uppercase;
   display: inline-block;
-  width: 300px;
+  width: 280px;
   -webkit-transition: all .3s;
   -moz-transition: all 3s;
   -ms-transition: all .3s;
@@ -207,18 +208,19 @@
 // About section
 
 .section-about {
-  margin-top: -23px;
-  padding: 100px 250px;
-  background-color: #eee;
+  margin-top: 150px;
+  height: 600px;
+  background-color: #fff;
+  color: #20346f;
 }
 
 .heading-secondary {
   text-align: center;
-  text-transform: uppercase;
   font-size: 3rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: 'PT Serif', serif;
 
 }
 .border-line {
@@ -232,10 +234,10 @@
 
 
   &--heading {
-    font-weight: 400;
+    font-weight: 200;
     font-size: 1.4rem;
     letter-spacing: -1px;
-    font-family: 'PT Serif', serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   &__text {
       font-size: 0.9rem;
