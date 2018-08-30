@@ -15,11 +15,11 @@ body {
 #footer {
   position: relative;
   width: 100%;
-  min-height: 100px;
+  height: 300px;
   background-color: rgba(36, 32, 33, 0.9);
   color: white;
   font-family: "Helvetica Neue", Helvetica;
-  padding: 10px 0px;
+  padding-top: 100px;
 }
 
 #footer a {
@@ -30,4 +30,10 @@ body {
 .social a:hover {
   text-decoration: none;
 
+}
+
+h4{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }

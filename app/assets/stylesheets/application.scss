@@ -47,12 +47,14 @@
   display: block;
   letter-spacing: 1px;
   line-height: 56px;
+  font-family: 'PT Serif', serif;
 }
 
 .heading-primary--sub {
   display: block;
   font-size: 30px;
   letter-spacing: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .btn-home {
@@ -107,9 +109,11 @@
 @media (max-width: 1440px) {
   .btn-green {
     width: 300px;
+    margin-top: 30px;
   }
   .btn-home {
     width: 300px;
+    margin-right: 0;
   }
 
   .feature-box__circle {
@@ -231,10 +235,12 @@
     font-weight: 400;
     font-size: 1.4rem;
     letter-spacing: -1px;
+    font-family: 'PT Serif', serif;
   }
   &__text {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       margin-top: 1rem;
+      font-family: 'Source Sans Pro', sans-serif;
   }
 
 }

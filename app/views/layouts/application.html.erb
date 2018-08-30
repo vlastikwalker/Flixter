@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Source+Sans+Pro" rel="stylesheet">
 </head>
 
 <body>
@@ -57,14 +58,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-3">
-        <b>Teachers</b>
+        <h4>Teachers</h4>
         <br />
         <%= link_to 'Teach a Course', new_instructor_course_path %>
         <br />
         <%= link_to 'My Dashboard', dashboard_path %>
       </div>
       <div class="col-12 col-sm-3">
-        <b>About</b>
+        <h4>About</h4>
         <br />
         <%= link_to 'Team', '#' %>
         <br />
@@ -73,17 +74,12 @@
         <%= link_to 'Privacy Policy', privacy_path %>
       </div>
       <div class="col-12 col-sm-3">
-        <b>Contact</b>
-        <br />
-        <br />
+        <h4>Contact</h4>
         One Kendall Square
-        <br />
         Arizona
       </div>
       <div class="col-12 col-sm-3 social">
         <b>Social</b>
-        <br/>
-        <br/>
         <%= link_to 'https://github.com/vlastikczech' do %>
           <span class="fa fa-github-square fa-2x social-button"></span>
         <% end %>

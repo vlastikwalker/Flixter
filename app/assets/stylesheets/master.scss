@@ -10,13 +10,13 @@
 }
 
 body {
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-family: 'Source Sans Pro', sans-serif;
   box-sizing: inherit;
 }
 
 
 .navbar {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: 'PT Serif', serif;
   font-weight: 200;
   background: transparent;
   z-index: 2;
@@ -26,7 +26,6 @@ nav.navbar.navbar-toggleable-md.navbar-inverse {
 }
 
 .navbar-inverse a.navbar-brand {
-  font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
   color: white;
 }
@@ -36,6 +35,7 @@ nav.navbar.navbar-toggleable-md.navbar-inverse {
 
 .navbar-logo {
   display: inline-block;
+  font-family: 'PT Serif', serif;
   padding-top: .25rem;
   padding-bottom: .25rem;
   margin-right: 1rem;
@@ -75,13 +75,13 @@ nav.navbar.navbar-toggleable-md.navbar-inverse {
   color: #eee;
   font-weight: 300;
   font-size: 16px;
+  font-family: 'PT Serif', serif;
 }
 
 // section info
 
 .feature-box {
   font-size: 1.5rem;
-  padding: 1.0rem;
   text-align: center;
 }
 
@@ -89,12 +89,18 @@ nav.navbar.navbar-toggleable-md.navbar-inverse {
   font-size: 4rem;
   margin-bottom: 2.5rem;
   display: inline-block;
-  background-image: linear-gradient(to right, #94a0a4, #748083, #556163, #384345, #1d2829);
-  -webkit-background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: black;
+}
+
+.icon-1 {
+  background-image: image_url('learn.png');
+
+}
+.icon-2 {
+  background-image: image_url('read.png');
+}
+.icon-3 {
+
 }
 
 
