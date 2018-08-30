@@ -59,33 +59,51 @@
     <div class="row">
       <div class="col-12 col-sm-3">
         <h4>Teachers</h4>
-        <br />
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
-        <br />
-        <%= link_to 'My Dashboard', dashboard_path %>
+        <ul class="footer-list">
+          <li>
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+          </li>
+          <li>
+            <%= link_to 'My Dashboard', dashboard_path %>
+          </li>
+        </ul>
       </div>
       <div class="col-12 col-sm-3">
         <h4>About</h4>
-        <br />
-        <%= link_to 'Team', '#' %>
-        <br />
-        <%= link_to 'Careers', '#' %>
-        <br />
-        <%= link_to 'Privacy Policy', privacy_path %>
+        <ul class="footer-list">
+          <li>
+            <%= link_to 'Team', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Careers', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Privacy Policy', privacy_path %>
+          </li>
+        </ul>
       </div>
       <div class="col-12 col-sm-3">
         <h4>Contact</h4>
-        One Kendall Square
-        Arizona
+        <ul class="footer-list">
+          <li>One Kendall Square
+            Arizona</li>
+        </ul>
       </div>
       <div class="col-12 col-sm-3 social">
-        <b>Social</b>
-        <%= link_to 'https://github.com/vlastikczech' do %>
-          <span class="fa fa-github-square fa-2x social-button"></span>
-        <% end %>
-
-        <span class="fa fa-facebook-square fa-2x social-button"></span>
-        <span class="fa fa-twitter-square fa-2x social-button"></span>
+        <h4>Social</h4>
+        <ul class="social-list">
+          <li>
+            <%= link_to 'https://github.com/vlastikczech' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+          </li>
+          <li>
+            <span class="fa fa-facebook-square fa-2x social-button"></span>
+          </li>
+          <li>
+            <span class="fa fa-twitter-square fa-2x social-button"></span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
