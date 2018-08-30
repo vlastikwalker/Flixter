@@ -23,11 +23,13 @@ body {
 }
 nav.navbar.navbar-toggleable-md.navbar-inverse {
   font-size: 22px;
+  background-color: #12192d !important;
 }
 
 .navbar-inverse a.navbar-brand {
-  font-weight: 100;
-  color: white;
+  font-family: 'PT Serif', serif;
+  font-size: 1.8rem;
+  color: #eee;
 }
 .navbar-inverse .navbar-nav .nav-link {
   color: white;
@@ -71,12 +73,13 @@ nav.navbar.navbar-toggleable-md.navbar-inverse {
   margin: 57px;
 }
 
-.navbar-nav-home .nav-link {
+.nav-link {
   color: #eee;
   font-weight: 300;
   font-size: 16px;
   font-family: 'PT Serif', serif;
 }
+
 
 // section info
 
