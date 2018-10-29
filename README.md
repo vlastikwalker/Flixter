@@ -16,8 +16,10 @@ http://thefirehoseproject.com/
 * HTML
 * CSS
 * Ruby
-* Ruby on Rails
 * Javascript
+
+## Framework used
+* Ruby On Rails
 
 ## Get started
 
